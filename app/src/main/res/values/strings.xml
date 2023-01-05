@@ -1,13 +1,23 @@
 <resources>
     <string name="app_name">BookstoreApp</string>
+
+
+    <!-- sign up sheet edit text output -->
     <string name="first_name_signup_et_hint">First name</string>
     <string name="last_name_signup_et_hint">Last name</string>
     <string name="email_address_signup_et_hint">Email address</string>
     <string name="create_password_signup_et_hint">Create password</string>
     <string name="phone_number_signup_et_hint">Phone number</string>
-    <string name="address_line_1_signup_et_hint">Address Line 1</string>
-    <string name="address_line_2_signup_et_hint">Address Line 2</string>
+    <string name="street_address_signup_et_hint">Street Address</string>
     <string name="search_btn_bottom_bar">SEARCH</string>
     <string name="home_btn_bottom_bar">HOME</string>
     <string name="shelf_btn_bottom_bar">SHELF</string>
+    <string name="city_signup_et_hint">City</string>
+    <string name="state_signup_et_hint">State</string>
+    <string name="zip_code_signup_et_hint">Zip code</string>
+    <string name="sign_up_btn_text">SIGN UP</string>
+    <string name="login_button_text">LOGIN</string>
+    <string name="dob_signup_et_hint">Date of birth</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
