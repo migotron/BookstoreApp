@@ -1,7 +1,7 @@
 package com.emonics.bookstoreapp
 
 data class BookModel (
-//Creating variables for our bookStore kotlin project
+// Creating variables for our bookStore kotlin project
     val title: String,
     val author: String,
     val isbn: Int,
@@ -9,10 +9,10 @@ data class BookModel (
     val price: Int,
     val description: String,
     val preview: String,
-    var publisher: String,
-    var publishedDate: String,
-    var pageCount: Int,
-    var thumbnail: String,
+    val publisher: String,
+    val publishedDate: String,
+    val pageCount: Int,
+    val thumbnail: String,
     var previewLink: String,
     var infoLink: String,
     var buyLink: String
