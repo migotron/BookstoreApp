@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import com.emonics.bookstoreapp.R
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -43,8 +44,22 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        home.setOnClickListener {
+        home_tv.setOnClickListener {
             Toast.makeText(context, "Welcome to home fragment!", Toast.LENGTH_SHORT).show()
+        }
+        signup_btn.setOnClickListener {
+            // switch to sign up fragment
+            val signUpFragment = SignUpFragment()
+            // get the support fragment manager instance
+            val manager = fragmentManager
+            // begin fragment transaction using fragment manager
+            val transaction = manager?.beginTransaction()
+            // replace fragment in the container and finish transaction
+            if (transaction != null) {
+                transaction.replace(R.id.fragment_container, signUpFragment)
+                transaction.addToBackStack(null)
+                transaction.commit()
+            }
         }
     }
 

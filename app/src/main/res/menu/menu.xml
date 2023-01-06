@@ -10,6 +10,6 @@
         android:title="Home" />
     <item
         android:id="@+id/ic_shelf"
-        android:icon="@drawable/ic_baseline_local_library_24"
+        android:icon="@drawable/ic_baseline_menu_book_24"
         android:title="Shelf" />
 </menu>
