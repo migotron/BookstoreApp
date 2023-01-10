@@ -1,11 +1,12 @@
 package com.emonics.bookstoreapp.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.emonics.bookstoreapp.R
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -15,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SignUpFragment.newInstance] factory method to
+ * Use the [LoginFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SignUpFragment : Fragment() {
+class LoginFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,24 +37,28 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        complete_sign_up_btn.setOnClickListener {
+        login_btn.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
-        already_have_account_login_tv.setOnClickListener {
+        login_already_have_account_signup_tv.setOnClickListener {
             parentFragmentManager.popBackStack()
-            val loginFragment = LoginFragment()
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, loginFragment)
-            transaction.addToBackStack("login from signup already have an account")
+            // switch to sign up fragment
+            val signUpFragment = SignUpFragment()
+            // get the support fragment manager instance
+            val manager = parentFragmentManager
+            // begin fragment transaction using fragment manager
+            val transaction = manager.beginTransaction()
+            // replace fragment in the container and finish transaction
+            transaction.replace(R.id.fragment_container, signUpFragment)
+            transaction.addToBackStack(null)
             transaction.commit()
         }
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -61,12 +66,12 @@ class SignUpFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SignUpFragment.
+         * @return A new instance of fragment LoginFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SignUpFragment().apply {
+            LoginFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -1,12 +1,11 @@
 package com.emonics.bookstoreapp.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.Fragment
 import com.emonics.bookstoreapp.R
 import com.emonics.bookstoreapp.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -23,19 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     private lateinit var binding: FragmentHomeBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,38 +38,26 @@ class HomeFragment : Fragment() {
             Toast.makeText(context, "Welcome to home fragment!", Toast.LENGTH_SHORT).show()
         }
         sign_up_btn.setOnClickListener {
+            parentFragmentManager.popBackStack()
             // switch to sign up fragment
             val signUpFragment = SignUpFragment()
             // get the support fragment manager instance
-            val manager = fragmentManager
+            val manager = parentFragmentManager
             // begin fragment transaction using fragment manager
-            val transaction = manager?.beginTransaction()
+            val transaction = manager.beginTransaction()
             // replace fragment in the container and finish transaction
-            if (transaction != null) {
-                transaction.replace(R.id.fragment_container, signUpFragment)
-                transaction.addToBackStack(null)
-                transaction.commit()
-            }
+            transaction.replace(R.id.fragment_container, signUpFragment)
+            transaction.addToBackStack("sign up fragment from home")
+            transaction.commit()
         }
+      login_btn_home.setOnClickListener {
+          parentFragmentManager.popBackStack()
+          val loginFragment = LoginFragment()
+          val transaction = parentFragmentManager.beginTransaction()
+          transaction.replace(R.id.fragment_container, loginFragment)
+          transaction.addToBackStack("login from signup already have an account")
+          transaction.commit()
+      }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

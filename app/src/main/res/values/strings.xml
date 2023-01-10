@@ -16,8 +16,7 @@
     <string name="state_signup_et_hint">State</string>
     <string name="zip_code_signup_et_hint">Zip code</string>
     <string name="sign_up_btn_text">SIGN UP</string>
+    <string name="complete_sign_up_btn_text">COMPLETE SIGN UP</string>
     <string name="login_button_text">LOGIN</string>
     <string name="dob_signup_et_hint">Date of birth</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
