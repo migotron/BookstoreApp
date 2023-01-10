@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import com.emonics.bookstoreapp.R
+import com.emonics.bookstoreapp.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_search.*
 
@@ -25,6 +26,8 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +50,7 @@ class HomeFragment : Fragment() {
         home_tv.setOnClickListener {
             Toast.makeText(context, "Welcome to home fragment!", Toast.LENGTH_SHORT).show()
         }
-        signup_btn.setOnClickListener {
+        sign_up_btn.setOnClickListener {
             // switch to sign up fragment
             val signUpFragment = SignUpFragment()
             // get the support fragment manager instance

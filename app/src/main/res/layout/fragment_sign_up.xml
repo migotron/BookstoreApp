@@ -35,113 +35,124 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:id="@+id/signup_form_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fname_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/first_name_signup_et_hint"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/lname_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/last_name_signup_et_hint"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dob_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/dob_signup_et_hint"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/number_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/phone_number_signup_et_hint"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/address_line1_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/street_address_signup_et_hint"
-                    android:inputType="textPostalAddress" />
+                    android:inputType="textPostalAddress"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/address_city_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/city_signup_et_hint"
-                    android:inputType="textPostalAddress" />
+                    android:inputType="textPostalAddress"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/address_state_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/state_signup_et_hint"
-                    android:inputType="textPostalAddress" />
+                    android:inputType="textPostalAddress"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/address_zipcode_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/zip_code_signup_et_hint"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email_address_signup_et_hint"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/black"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/create_password_signup_et_hint"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black"/>
 
-                <LinearLayout
-                    android:id="@+id/signup_btn_layout"
+                <Button
+                    android:id="@+id/sign_up_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:text="@string/sign_up_btn_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/signup_haveaccount_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <Button
-                        android:id="@+id/sign_up_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/sign_up_btn_text"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:id="@+id/login_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/login_button_text"
-                        app:layout_constraintEnd_toEndOf="parent" />
-
+                    android:gravity="center"
+                    android:layout_margin="10dp">
+                <TextView
+                    android:id="@+id/already_have_account_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account?"
+                    />
+                <TextView
+                    android:id="@+id/already_have_account_sign_in_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign In"
+                    android:textColor="@color/purple_700"
+                    android:layout_marginStart="10dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -149,41 +160,5 @@
         </ScrollView>
 
     </LinearLayout>
-<!--
-    <LinearLayout
-        android:id="@+id/bottomAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/search_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:text="@string/search_btn_bottom_bar" />
-
-        <Button
-            android:id="@+id/home_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="1"
-            android:text="@string/home_btn_bottom_bar" />
-
-        <Button
-            android:id="@+id/my_library_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_weight="1"
-            android:text="@string/shelf_btn_bottom_bar" />
-
-    </LinearLayout>-->
 </FrameLayout>
