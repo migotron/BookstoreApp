@@ -10,6 +10,7 @@ import com.emonics.bookstoreapp.fragments.SearchFragment
 import com.emonics.bookstoreapp.fragments.ShelfFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,9 +23,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         replaceFragment(homeFragment)
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
+        bottom_navigation.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.ic_search -> replaceFragment(searchFragment)
+                R.id.ic_search -> {
+                    replaceFragment(searchFragment)
+                }
                 R.id.ic_home -> replaceFragment(homeFragment)
                 R.id.ic_shelf -> replaceFragment(shelfFragment)
             }

@@ -3,13 +3,13 @@
     <item
         android:id="@+id/ic_search"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search" />
+        android:title="SEARCH" />
     <item
         android:id="@+id/ic_home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:title="HOME" />
     <item
         android:id="@+id/ic_shelf"
         android:icon="@drawable/ic_baseline_menu_book_24"
-        android:title="Shelf" />
+        android:title="SHELF" />
 </menu>
